@@ -1,0 +1,14 @@
+<a href="/requests/new"><h2>Request An Item...</h2></a>
+<% if @requests %>
+<h3>All Requests:</h3>
+<% @requests.each_with_index do |request, index| %>
+<div style="float: left; width: 200px; margin-right: 50px;">
+  <div style="width: 100%; height: 200px; margin-bottom: 30px;"><img src="http://placehold.it/200x200" alt="Placeholder image"></div>
+  <h5><%= request.title %></h5>
+  <p><b>Price:</b> <span style="color: #CCC;">No bids yet</span></p>
+  <p><%= request.num_backers %> Backers | <a href="/join/<%= request.id %>?phase=alpha">I'm In!</a></p>
+</div>
+<% if index != 0 && index % 3 == 0 %><div style="clear: both; margin-botom: 20px;"></div><% end %>
+<% end %>
+<div style="clear: both; margin-top: 30px;"></div>
+<% end %>
