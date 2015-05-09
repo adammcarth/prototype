@@ -3,11 +3,52 @@
 
 <form action="/requests/new" method="post">
   <p>
-    <input type="text" name="title" placeholder="Item Name (Be Specific)..." style="padding: 5px; width: 300px;">
+    <input type="text" name="title" placeholder="Item Name (Be Specific)..." style="padding: 5px; width: 300px;"> <a href="#" style="padding-left: 10px;">Lookup a barcode...</a>
   </p>
 
   <p>
-    <textarea name="description" placeholder="Description..." style="width: 500px; height: 100px;"></textarea>
+    <select name="category" style="padding: 5px; width: 510px;">
+      <option>Please select a category...</option>
+      <option value="1">Technology</option><!-- tech.onetomany.com -->
+      <option value="2">Fashion</option><!-- fashion.onetomany.com -->
+      <option value="8">Cosmetics</option><!-- cosmetics.onetomany.com -->
+      <option value="3">Toys</option><!-- toys.onetomany.com -->
+      <option value="4">Food & Beverages</option><!-- eat.onetomany.com -->
+      <option value="5">Alcohol</option><!-- alcohol.onetomany.com -->
+      <option value="8">Homeware, Furnature & Appliances</option><!-- home.onetomany.com -->
+      <option value="10">Vehicles</option><!-- vehicles.onetomany.com -->
+      <option value="12">Industrial Goods</option><!-- industrial.onetomany.com -->
+      <option value="12">Services</option><!-- services.onetomany.com -->
+      <option value="0">Other / I'm Not Sure</option><!-- Will be classified by a One To Many staff member -->
+    </select>
+  </p>
+
+  <p>
+    <textarea name="description" placeholder="Description..." style="padding: 5px; width: 500px; height: 100px;"></textarea>
+  </p>
+
+  <p>
+    <label style="font-weight: bold; display: block; padding-bottom: 10px;">Upload an image:</label>
+    <input type="file" name="product_image">
+  </p>
+
+  <p>
+    <label style="font-weight: bold;">Minimum seed time:</label>
+    <select name="seed_time" style="padding: 5px;">
+      <option value="5">5 Days</option>
+      <option value="7">7 Days</option>
+      <option value="14">14 Days</option>
+      <option value="30">30 Days</option>
+      <option value="45">45 Days</option>
+    </select>
+  </p>
+
+  <p>
+    <label style="font-weight: bold;">Desired Quantity: </label> <input type="text" value="1" name="quantity" style="width: 20px;">
+  </p>
+
+  <p>
+    <input type="checkbox" value="1" checked="true"> I would like to lead this campaign.
   </p>
 
   <input type="submit" value="Submit">

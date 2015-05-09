@@ -23,10 +23,20 @@ end
 post "/requests/new" do 
   JTask.save("requests.json", {
     title: params[:title],
+    description: params[:description],
+    category_id: params[:category].to_i,
+    seed_time: params[:seed_time].to_i,
+    quantity: params[:quantity].to_i,
     num_backers: 1
   })
 
   redirect "/requests"
+end
+
+get "/requests/:id" do
+  id = params[:id].to_i
+  @request = JTask.get("requests.json", id)
+  erb :show_request
 end
 
 get "/join/:id" do
@@ -42,5 +52,5 @@ get "/join/:id" do
     })
   end
 
-  redirect "/"
+  redirect "/requests/#{params[:id]}"
 end

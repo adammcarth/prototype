@@ -1,0 +1,18 @@
+<div style="float: left; margin-right: 30px;">
+  <img src="http://placehold.it/400x400" alt="Placeholder">
+</div>
+<div style="float: left; width: 400px;">
+  <h2><%= @request.title %></h2>
+  <h2 style="padding: 10px 0;">$ <span style="color: #CCC;">No bids yet</span></h2>
+  <p><%= @request.description if @request.description %></p>
+  <h4><%= request.quantity %> Units Requested So Far From <%= request.num_backers %> Seeds.</h4>
+  <a href="/join/<%= request.id %>?phase=alpha"><button>I'm In!</button></a>
+</div>
+
+<div style="clear: both; margin-bottom: 30px;"></div>
+
+<h1>Discussion</h1>
+<h4>Adam McArthur</h4>
+<p>Hey. Does anyone know how long this fragrance lasts for?</p>
+<h4 style="padding-left: 20px;">Paul McArthur [Leader]</h4>
+<p style="padding-left: 20px;">Yeah, it typically lasts for about 6-7 hours.</p>
